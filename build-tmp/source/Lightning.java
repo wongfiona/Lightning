@@ -1,3 +1,19 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class Lightning extends PApplet {
+
 PImage photo;
 
 int startX = 250;
@@ -7,7 +23,7 @@ int endY = 0;
 
 int value = 0;
 
-void setup()
+public void setup()
 {
 	size (500,255);
   	photo = loadImage ("https://lh4.googleusercontent.com/-d9bT_5De1LA/U4zBQPPQ83I/AAAAAAAACTg/9LJYMo1_vcw/tumblr_lzlk7xFYHz1qbs05mo1_500.gif");
@@ -15,7 +31,7 @@ void setup()
 
 }
 
-void draw()
+public void draw()
 {
 	image (photo, 0, 0);
 	int colorY;
@@ -32,7 +48,7 @@ void draw()
 	
 }
 
-void mouseMoved()
+public void mouseMoved()
 {
 	startX = 250;
 	startY = 0;
@@ -49,3 +65,12 @@ void mouseMoved()
 
 
 	
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "Lightning" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
+}
