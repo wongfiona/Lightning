@@ -50,7 +50,7 @@ public void draw()
 
 public void mouseMoved()
 {
-	startX = 250;
+	startX = (int)(Math.random()*500);
 	startY = 0;
 	endX = 250;
 	endY = 0;
